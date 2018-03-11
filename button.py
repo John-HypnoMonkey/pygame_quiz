@@ -1,5 +1,6 @@
-from text_block import TextBlock
 import pygame
+from text_block import TextBlock
+from colors import Color
 
 
 class Button(TextBlock):
@@ -8,9 +9,8 @@ class Button(TextBlock):
         super().__init__(x, y, w, h, text)
         self.state = 'normal'
         self.onclick_func = onclick_func
-        self.HOVERED_BACK_COLOR = (255, 255, 255)
-        self.PRESSED_BACK_COLOR = (0, 0, 255)
-
+        self.HOVERED_BACK_COLOR = Color.WHITE
+        self.PRESSED_BACK_COLOR = Color.BLUE
 
     def update(self):
         if self.state == 'normal':

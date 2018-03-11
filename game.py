@@ -3,10 +3,12 @@ import sys
 from text_block import TextBlock
 from answer_button import AnswerButton
 from question_object import Question_Object
+from colors import Color
 
 
 class GameState:
     menu, game, game_over = range(3)
+
 
 class Game:
 
@@ -27,7 +29,11 @@ class Game:
         self.questions = [Question_Object('World War I began in which year?', ('1923', '1938', '1917', '1914'), 3),
                           Question_Object('The Hundred Years War was fought between what two countries?',
                                           ('Italy and Carthage', 'England and Germany', 'France and England', 'Spain and France'), 2),
-                          Question_Object('Who fought in the war of 1812?', ('Andrew Jackson', 'Arthur Wellsley', 'Otto von Bismarck', 'Napoleon'), 0)
+                          Question_Object('Who fought in the war of 1812?', ('Andrew Jackson', 'Arthur Wellsley', 'Otto von Bismarck', 'Napoleon'), 0),
+                          Question_Object('American involvement in the Korean War took place in which decade?', ('1950s', '1960s', '1970s', '1980s'), 0),
+                          Question_Object('The Battle of Hastings in 1066 was fought in which country?  ', ('France', 'Russia', 'England', 'Norway'), 3),
+                          Question_Object('The Magna Carta was published by the King of which country? ', ('France', 'Austria', 'Italy', 'England'), 3),
+                          Question_Object('The first successful printing press was developed by this man.', ('Johannes Gutenburg', 'Benjamin Franklin', 'Sir Isaac Newton', 'Martin Luther'), 0)
                           ]
         self.score_text_block = TextBlock(500, 10, 250, 50, "Score: {0}/{1}".format(str(self.score), str(len(self.questions))))
         self.objects.append(self.score_text_block)
@@ -111,7 +117,7 @@ class Game:
 
     def run(self):
         while True:
-            self.surface.fill((192, 192, 192))
+            self.surface.fill(Color.BLUEVIOLET)
             self.handleEvents()
             self.draw()
             self.update()

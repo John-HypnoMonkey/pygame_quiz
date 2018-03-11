@@ -1,5 +1,6 @@
 import pygame
 from game_object import GameObject
+from colors import Color
 
 
 class TextBlock(GameObject):
@@ -11,7 +12,7 @@ class TextBlock(GameObject):
         self.x_padding = x + 10
         self.y_padding = y + 13
         self.font = pygame.font.SysFont('Arial', 22)
-        self.DEFAULT_BACK_COLOR = (238, 130, 238)
+        self.DEFAULT_BACK_COLOR = Color.CADETBLUE
         self.back_color = self.DEFAULT_BACK_COLOR
 
     def draw(self, surface):
